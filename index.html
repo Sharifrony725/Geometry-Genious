@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+        :root,
+        [data-theme] {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="w-full">
+            <div class="px-7 navbar bg-sky-100">
+                <div class="navbar-start">
+                <h3 class="text-4xl font-bold">Interactive <br>
+                <span class="text-3xl font-medium">Geometry Genius</span></h3>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-info border-0 px-5 text-white">Blog</a>
+                </div>
+            </div>
+    </header>
+    <main>
+        <!-- main container -->
+        <div class="flex flex-col lg:flex-row p-12">
+            <!-- shape container -->
+            <div class="flex-1 grid gap-4 grid-cols-1 lg:grid-cols-3">
+                <!-- first card -->
+                <div class="card shadow-xl border border-black bg-[#FBBCED] text-black">
+                    <figure><img class="w-60 mt-6 mx-auto" src="./images/triangle.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="text-2xl font-bold text-black text-center">Triangle</h2>
+                        <p class="text-xl font-medium text-center">Area (A) = 0.5 x b x h</p>
+                        <div class="text-center">
+                            <input id="triangle-base" class="bg-[#F1F1F1] w-16 p-1 rounded" type="text" placeholder="b"> cm
+                            <input id="triangle-height" class="bg-[#F1F1F1] w-16 p-1 rounded" type="text" placeholder="h"> cm
+                        </div>
+                         <p class="text-xl font-medium text-center">Area: <span id="triangle-area">00</span> cm<sup>2</sup></p>
+                        <div class="card-actions justify-center mt-4">
+                        <button onclick="calculateTriangleArea()" class="btn btn-info rounded-lg text-white px-10 py-1">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2nd card -->
+                <div class="card  shadow-xl border border-black bg-white text-black">
+                    <figure><img class="w-60 mt-12 mx-auto" src="./images/rectangle.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="text-2xl font-bold text-black text-center">Rectangle</h2>
+                        <p class="text-xl font-medium text-center">Area (A) = w x I</p>
+                        <div class="text-center">
+                            <input id="rectangle-width" class="bg-[#F1F1F1] w-16 p-1 rounded" type="text" placeholder="w"> cm
+                            <input id="rectangle-length" class="bg-[#F1F1F1] w-16 p-1 rounded" type="text" placeholder="l"> cm
+                        </div>
+                        <p class="text-xl font-medium text-center">Area: <span id="rectangle-area">00</span> cm<sup>2</sup></p>
+                        <div class="card-actions justify-center mt-4">
+                        <button onclick="calculateRectangleArea()" class="btn btn-info rounded-lg text-white px-10 py-1">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3rd card -->
+                <div class="card  shadow-xl border border-black bg-white text-black">
+                    <figure><img class="w-60 mt-12 mx-auto" src="./images/parallelogram.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="text-2xl font-bold text-black text-center mt-5">Parallelogram</h2>
+                        <p class="text-xl font-medium text-center">Area (A) = b x h</p>
+                        <div class="text-center">
+                             <input id="parallelogram-base" class="bg-[#F1F1F1] w-16 p-1 rounded" type="text" placeholder="b"> cm
+                            <input id="parallelogram-height" class="bg-[#F1F1F1] w-16 p-1 rounded" type="text" placeholder="h"> cm
+                        </div>
+                        <p class="text-xl font-medium text-center">Area: <span id="parallelogram-area">00</span> cm<sup>2</sup></p>
+                        <div class="card-actions justify-center mt-4">
+                        <button onclick="calculateParallelogram()" class="btn btn-info rounded-lg text-white px-10 py-1">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- area container -->
+            <div>
+
+            </div>
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>
