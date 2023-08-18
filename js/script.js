@@ -7,6 +7,7 @@ function calculateTriangleArea() {
     }
     const area = 0.5 * base * height;
     setElementInnerText('triangle-area', area);
+    addToCalculationEntry('Triangle', area);
 }
 function calculateRectangleArea() {
     const width = getInputFieldValue('rectangle-width');
@@ -17,6 +18,7 @@ function calculateRectangleArea() {
     }
     const area = width * length;
     setElementInnerText('rectangle-area', area);
+    addToCalculationEntry('Rectangle', area);
 }
 function calculateParallelogram() {
     const base = getInputFieldValue('parallelogram-base');
@@ -27,6 +29,8 @@ function calculateParallelogram() {
     }
     const area = base * height;
     setElementInnerText('parallelogram-area', area);
+
+    addToCalculationEntry('Parallelogram', area);
 }
 
 //reusable function -->reduce duplicate code
@@ -41,5 +45,14 @@ function getInputFieldValue(inputId) {
 function setElementInnerText(elementId, area) {
     const element = document.getElementById(elementId);
     element.innerText = area;
+}
+ 
+function addToCalculationEntry(areaType, area) {
+    const calculationEntry = document.getElementById('calculation-entry');
+    const count = calculationEntry.childElementCount;
+    const p = document.createElement('p');
+    p.classList.add('my-4', 'text-left', 'pl-2');
+    p.innerHTML = `${count + 1}. ${areaType} ${area} cm<sup></sup>2 <button class="btn btn-info btn-sm ml-10">Covert</button>`;
+    calculationEntry.appendChild(p);
 }
 
