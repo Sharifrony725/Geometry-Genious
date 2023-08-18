@@ -1,18 +1,30 @@
 function calculateTriangleArea() {
     const base = getInputFieldValue('triangle-base');
     const height = getInputFieldValue('triangle-height');
-   const area = 0.5 * base * height;
-   setElementInnerText('triangle-area', area);
+    if(isNaN(base) || isNaN(height)){
+        alert("Please Provide Only Numbers");
+        return;
+    }
+    const area = 0.5 * base * height;
+    setElementInnerText('triangle-area', area);
 }
 function calculateRectangleArea() {
     const width = getInputFieldValue('rectangle-width');
     const length = getInputFieldValue('rectangle-length');
+    if (isNaN(width) || isNaN(length)) {
+        alert("Please Provide Only Numbers");
+        return;
+    }
     const area = width * length;
     setElementInnerText('rectangle-area', area);
 }
 function calculateParallelogram() {
     const base = getInputFieldValue('parallelogram-base');
     const height = getInputFieldValue('parallelogram-height');
+    if (isNaN(base) || isNaN(height)) {
+        alert("Please Provide Only Numbers");
+        return;
+    }
     const area = base * height;
     setElementInnerText('parallelogram-area', area);
 }
